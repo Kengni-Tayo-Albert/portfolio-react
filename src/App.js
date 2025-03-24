@@ -1,18 +1,21 @@
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-import HomePage from "./pages/Home";
-import ServicesPage from "./pages/Services";
 import AppRouter from "./routes/Router";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import GitHubModal from "./components/GitHubModal";
+import { Container } from "react-bootstrap"; // Si tu veux garder le container
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <div className="App">
+    <Container fluid className="App px-0">
       <Header />
-      <AppRouter />
+      <AppRouter onShowModal={() => setShowModal(true)} />
       <Footer />
-    </div>
+      <GitHubModal show={showModal} handleClose={() => setShowModal(false)} />
+    </Container>
   );
 }
 

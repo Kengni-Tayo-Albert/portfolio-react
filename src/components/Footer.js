@@ -28,7 +28,7 @@ const Footer = () => {
             {/* Icônes réseaux sociaux */}
             <div className="d-flex gap-3">
               <a
-                href="https://github.com/johndoe"
+                href="https://github.com/github-john-doe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-light social-icon"
