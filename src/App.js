@@ -1,23 +1,21 @@
-import React from "react";
-import { Container } from "react-bootstrap"; // ✅ Ajout de Container
-import "bootstrap/dist/css/bootstrap.min.css"; // ✅ Juste au cas où
-
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
-import HomePage from "./pages/Home";
-import ServicesPage from "./pages/Services";
 import AppRouter from "./routes/Router";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import GitHubModal from "./components/GitHubModal";
+import { Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css"; 
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <Container fluid className="App px-0">
-      {" "}
-      {/* Container fluid ici */}
       <Header />
-      <AppRouter />
+      <AppRouter onShowModal={() => setShowModal(true)} />
       <Footer />
+      <GitHubModal show={showModal} handleClose={() => setShowModal(false)} />
     </Container>
   );
 }

@@ -11,7 +11,7 @@ const skills = [
   { name: "REACT", value: 50, variant: "primary" },
 ];
 
-const HomePage = () => {
+const HomePage = ({ onShowModal }) => {
   return (
     <>
       {/* Hero Section */}
@@ -26,7 +26,7 @@ const HomePage = () => {
       >
         <h1 className="fw-bold">Bonjour, je suis John Doe</h1>
         <h2 className="fw-bold">Développeur web full stack</h2>
-        <Button variant="danger" className="mt-4">
+        <Button variant="danger" className="mt-4" onClick={onShowModal}>
           En savoir plus
         </Button>
       </div>

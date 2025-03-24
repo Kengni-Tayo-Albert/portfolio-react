@@ -1,4 +1,6 @@
-/* Reset & Base */
+/* ========================== */
+/*        RESET & BASE        */
+/* ========================== */
 body {
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
@@ -14,13 +16,22 @@ html {
   scroll-behavior: smooth !important;
 }
 
-/* Style du Footer */
+/* ========================== */
+/*         FOOTER             */
+/* ========================== */
 .footer a {
   text-decoration: none;
+  transition: font-weight 0.2s ease-in-out;
 }
 
-.footer .social-icon:hover {
-  color: #020202; /* Couleur au survol */
+.footer a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer .social-icon:hover svg {
+  color: black; /* devient blanc si thème clair */
+  transition: color 0.3s ease-in-out;
 }
 
 .footer ul {
@@ -31,11 +42,32 @@ html {
   list-style: none;
 }
 
-.footer ul li a:hover {
+@media (max-width: 768px) {
+  .footer .d-flex {
+    justify-content: center !important;
+  }
+
+  .footer .text-md-start,
+  .footer h5 {
+    text-align: center !important;
+  }
+}
+
+/* ========================== */
+/*        HEADER              */
+/* ========================== */
+.nav-link.active {
+  font-weight: bold;
   text-decoration: underline;
 }
 
-/* Hero section */
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================== */
+/*       HERO SECTION         */
+/* ========================== */
 .hero-section {
   background-size: cover;
   background-position: center;
@@ -54,48 +86,43 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
-/* Responsive Footer & Hero */
 @media (max-width: 768px) {
   .hero-section {
     height: auto;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    text-align: center;
-  }
-
-  .footer .d-flex {
-    justify-content: center !important;
-  }
-
-  .footer .text-md-start {
-    text-align: center !important;
-  }
-
-  .footer h5 {
-    text-align: center;
   }
 }
 
-/* Cards - hover animation */
-.service-card {
+/* ========================== */
+/*           CARDS            */
+/* ========================== */
+.card,
+.service-card,
+.project-card {
   transition: all 0.3s ease-in-out;
 }
 
-.service-card:hover {
-  background-color: #efefef;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.card:hover,
+.service-card:hover,
+.project-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: #f8f9fa;
 }
 
-/* Style bouton portfolio */
+/* ========================== */
+/*         BOUTONS            */
+/* ========================== */
+.btn:hover,
+.project-button:hover {
+  filter: brightness(85%);
+  transition: filter 0.2s ease-in-out;
+}
 
 .project-button {
-  padding: 0.375rem 1rem; /* légèrement réduit */
+  padding: 0.375rem 1rem;
   font-size: 0.9rem;
   width: fit-content;
   align-self: center;
   transition: background-color 0.3s ease;
-}
-
-.project-button:hover {
-  background-color: #0056b3 !important; /* bleu plus foncé au survol */
 }
