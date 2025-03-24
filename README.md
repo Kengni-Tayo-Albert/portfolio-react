@@ -52,7 +52,7 @@ Avant de commencer, vous devez avoir installé :
 1. **Cloner le dépôt :**
 
 ```bash
-git clone https://github.com/votre-utilisateur/portfolio-john-doe.git
+git clone https://github.com/Kengni-Tayo-Albert/portfolio-react.git
 cd portfolio-john-doe
 npm install
 npm start
