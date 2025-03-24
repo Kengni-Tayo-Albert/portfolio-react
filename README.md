@@ -46,6 +46,7 @@ Avant de commencer, vous devez avoir installé :
 - [Node.js](https://nodejs.org) (version recommandée : 18+)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 - Un éditeur de code (ex : [Visual Studio Code](https://code.visualstudio.com/))
+- Ouvrir un nouveau dossier sur visual studio code 
 
 ### Étapes d'installation
 
