@@ -1,3 +1,7 @@
+import React from "react";
+import { Container } from "react-bootstrap"; // ✅ Ajout de Container
+import "bootstrap/dist/css/bootstrap.min.css"; // ✅ Juste au cas où
+
 import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./pages/Home";
@@ -8,11 +12,13 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <Container fluid className="App px-0">
+      {" "}
+      {/* Container fluid ici */}
       <Header />
       <AppRouter />
       <Footer />
-    </div>
+    </Container>
   );
 }
 
