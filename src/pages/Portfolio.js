@@ -1,8 +1,20 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap"; // Composants Bootstrap pour la mise en page et les cartes
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../index.css"; // Pour appliquer les styles globaux
+import "../index.css"; // Import des styles globaux du projet
+import { Helmet } from "react-helmet"; // Gestion des balises SEO dynamiques
 
+// Balises meta SEO spécifiques à cette page
+<Helmet>
+  <title>John Doe - Développeur Full Stack</title>
+  <meta
+    name="description"
+    content="Portfolio de John Doe, développeur web full stack spécialisé en React, PHP, JS."
+  />
+  <meta name="robots" content="index, follow" />
+</Helmet>;
+
+// Liste des projets à afficher, avec titre, description, technologie utilisée, image, et lien
 const projects = [
   {
     title: "Fresh Food",
@@ -48,10 +60,11 @@ const projects = [
   },
 ];
 
+// Composant de la page Portfolio affichant les projets dans une grille responsive
 const PortfolioPage = () => {
   return (
     <div>
-      {/* Banner */}
+      {/* Bandeau visuel en haut de la page */}
       <img
         src="/images/banner.jpg"
         alt="Banner"
@@ -59,28 +72,34 @@ const PortfolioPage = () => {
         style={{ maxHeight: "250px", objectFit: "cover" }}
       />
 
-      {/* Titre */}
+      {/* Titre et sous-titre avec séparation visuelle */}
       <Container className="text-center my-5">
         <h2 className="fw-bold">Portfolio</h2>
         <p>Voici quelques-unes de mes réalisations.</p>
         <hr className="border border-primary border-2 opacity-100 w-25 mx-auto mb-5" />
       </Container>
 
-      {/* Grid */}
+      {/* Grille de projets responsive */}
       <Container className="mb-5">
         <Row>
           {projects.map((project, index) => (
             <Col md={4} sm={6} xs={12} className="mb-4" key={index}>
+              {/* Carte de projet avec image, titre, description, lien et techno */}
               <Card className="project-card h-100 shadow-sm border-0">
+                {/* Image du projet */}
                 <Card.Img
                   variant="top"
                   src={project.image}
                   alt={project.title}
                   className="img-fluid"
                 />
+
+                {/* Corps de la carte contenant le texte */}
                 <Card.Body className="d-flex flex-column">
                   <Card.Title className="fw-bold">{project.title}</Card.Title>
                   <Card.Text>{project.description}</Card.Text>
+
+                  {/* Bouton menant vers le site ou la démo */}
                   <Button
                     href={project.url}
                     target="_blank"
@@ -91,6 +110,8 @@ const PortfolioPage = () => {
                     Voir le site
                   </Button>
                 </Card.Body>
+
+                {/* Pied de la carte indiquant la techno utilisée */}
                 <Card.Footer className="text-muted text-center small">
                   {project.tech}
                 </Card.Footer>

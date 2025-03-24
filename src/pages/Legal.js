@@ -1,21 +1,34 @@
 import React from "react";
-import { Container, Accordion } from "react-bootstrap";
+import { Container, Accordion } from "react-bootstrap"; // Composants Bootstrap pour la mise en page et l'accordéon
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Helmet } from "react-helmet"; // Permet de gérer dynamiquement les balises SEO dans le <head>
+
+// Déclaration des balises meta SEO spécifiques à cette page
+<Helmet>
+  <title>John Doe - Développeur Full Stack</title>
+  <meta
+    name="description"
+    content="Portfolio de John Doe, développeur web full stack spécialisé en React, PHP, JS."
+  />
+  <meta name="robots" content="index, follow" />
+</Helmet>;
 
 const Legal = () => {
   return (
     <>
       <head>
-        {/* Pour désindexer la page par les moteurs de recherche */}
+        {/* Désindexation explicite de la page pour les moteurs de recherche */}
         <meta name="robots" content="noindex" />
       </head>
 
       <Container className="my-5">
+        {/* Titre de la page avec séparation visuelle */}
         <h2 className="text-center fw-bold">Mentions légales</h2>
         <hr className="border border-primary border-2 opacity-100 w-25 mx-auto mb-5" />
 
+        {/* Accordéon contenant les 3 sections légales : éditeur, hébergeur, crédits */}
         <Accordion defaultActiveKey="0" flush>
-          {/* Éditeur du site */}
+          {/* Section : Éditeur du site */}
           <Accordion.Item eventKey="0">
             <Accordion.Header>Éditeur du site</Accordion.Header>
             <Accordion.Body>
@@ -29,7 +42,7 @@ const Legal = () => {
             </Accordion.Body>
           </Accordion.Item>
 
-          {/* Hébergeur */}
+          {/* Section : Hébergeur du site */}
           <Accordion.Item eventKey="1">
             <Accordion.Header>Hébergeur</Accordion.Header>
             <Accordion.Body>
@@ -47,7 +60,7 @@ const Legal = () => {
             </Accordion.Body>
           </Accordion.Item>
 
-          {/* Crédits */}
+          {/* Section : Crédits techniques et sources visuelles */}
           <Accordion.Item eventKey="2">
             <Accordion.Header>Crédits</Accordion.Header>
             <Accordion.Body>
