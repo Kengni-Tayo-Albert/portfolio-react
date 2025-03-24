@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Définition de l'encodage des caractères -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
+    <!-- Icône de l'onglet navigateur (favicon) -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Icône personnalisée (ex: logo JD) -->
     <link rel="icon" type="image/png" href="%PUBLIC_URL%/jd-flaticon.png" />
 
+    <!-- Importation de la police 'Nunito Sans' via Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Fichier de configuration PWA (Progressive Web App) -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Balises Open Graph pour le partage sur les réseaux sociaux -->
+    <meta property="og:title" content="Portfolio de John Doe" />
+    <meta
+      property="og:description"
+      content="Découvrez les projets de John Doe, développeur web full stack."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/images/preview.jpg" />
+    <meta property="og:url" content="https://ton-site.com" />
+
+    <!-- Configuration de l'aperçu pour Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Configuration de l'affichage responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Couleur du thème pour certains navigateurs et PWA -->
     <meta name="theme-color" content="#000000" />
+
+    <!-- Description du site pour les moteurs de recherche -->
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
+
+    <!-- Icône pour les appareils Apple -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Deuxième inclusion du manifest (peut être fusionnée avec la première si identique) -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     <title>React App</title>
   </head>
+
   <body>
+    <!-- Message affiché si JavaScript est désactivé dans le navigateur -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Point d’ancrage principal pour l’application React -->
     <div id="root"></div>
   </body>
 </html>
-

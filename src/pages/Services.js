@@ -1,8 +1,20 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import { BsPen, BsCodeSlash, BsSearch } from "react-icons/bs";
-import "../index.css";
+import { Container, Row, Col, Card } from "react-bootstrap"; // Composants Bootstrap pour la grille et les cartes
+import { BsPen, BsCodeSlash, BsSearch } from "react-icons/bs"; // Icônes Bootstrap React
+import "../index.css"; // Styles globaux personnalisés
+import { Helmet } from "react-helmet"; // Gestion des balises <head> pour le SEO
 
+// Définition des balises SEO pour cette page
+<Helmet>
+  <title>John Doe - Développeur Full Stack</title>
+  <meta
+    name="description"
+    content="Portfolio de John Doe, développeur web full stack spécialisé en React, PHP, JS."
+  />
+  <meta name="robots" content="index, follow" />
+</Helmet>;
+
+// Données des services proposés, avec icône, titre et description
 const services = [
   {
     title: "UX Design",
@@ -29,10 +41,11 @@ const services = [
   },
 ];
 
+// Composant principal de la page des services
 const ServicesPage = () => {
   return (
     <div>
-      {/* Bannière ou image de fond */}
+      {/* Bannière d’en-tête avec image de fond */}
       <div
         style={{
           backgroundImage: "url(/images/banner.jpg)",
@@ -42,8 +55,9 @@ const ServicesPage = () => {
         }}
       ></div>
 
-      {/* Contenu principal */}
+      {/* Section principale contenant les services */}
       <Container className="my-5">
+        {/* Titre et description introductive */}
         <h2 className="text-center fw-bold mb-2">Mon offre de services</h2>
         <p className="text-center mb-4">
           Voici les prestations sur lesquelles je peux intervenir
@@ -53,9 +67,11 @@ const ServicesPage = () => {
           style={{ width: "120px", height: "3px" }}
         />
 
+        {/* Grille responsive Bootstrap avec 1 à 3 colonnes selon la taille de l’écran */}
         <Row>
           {services.map((service, index) => (
             <Col key={index} xs={12} md={4} className="mb-4">
+              {/* Carte de service avec icône, titre et description */}
               <Card className="service-card text-center h-100 p-3 shadow-sm">
                 <div className="mb-3">{service.icon}</div>
                 <Card.Title className="fw-bold">{service.title}</Card.Title>
