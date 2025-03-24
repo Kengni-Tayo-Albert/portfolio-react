@@ -4,7 +4,8 @@ import AppRouter from "./routes/Router";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import GitHubModal from "./components/GitHubModal";
-import { Container } from "react-bootstrap"; // Si tu veux garder le container
+import { Container } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css"; 
 
 function App() {
   const [showModal, setShowModal] = useState(false);
